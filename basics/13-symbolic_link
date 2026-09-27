@@ -1,2 +1,2 @@
 #!/bin/bash
-ln -s /alu-shell/basci  __ls__
+ln -s /alu-shell/basics __ls__
