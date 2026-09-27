@@ -1,1 +1,2 @@
--e#!/bin/bahs\nln -s /alu-shell/basics _ls_
+#!/bin/bash
+ln -s /alu-shell/basics _ls_
