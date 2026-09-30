@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# Printing hour and minutes, every after 1 hour unti 12 hour reach 
 hour= 0
 while ((hour <=12))
 do
