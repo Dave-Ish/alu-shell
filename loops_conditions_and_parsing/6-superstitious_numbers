@@ -6,11 +6,11 @@ do
 case "$x" in
 	4)
 		echo "$x"
-		echo "bad luck fom china"
+		echo "bad luck fom China"
 		;;
 	9)
 		echo "$x"
-		echo "bad luck from japan"
+		echo "bad luck from Japan"
 		;;
 	17)
 		echo "$x"
