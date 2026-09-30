@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#listing current directories files, withouth hidden files
+for file in *
+do
+    echo "${file#*-}"
+done
