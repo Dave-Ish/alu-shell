@@ -14,7 +14,7 @@ case "$x" in
 		;;
 	17)
 		echo "$x"
-		echo "bad luch from Italy"
+		echo "bad luck from Italy"
 		;;
 	*)
 		echo "$x"
