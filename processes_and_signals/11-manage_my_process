@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/env bash
 # the managing  process
 PID_FILE="/var/run/my_process.pid"
 DAEMON_PATH="./manage_my_process"
