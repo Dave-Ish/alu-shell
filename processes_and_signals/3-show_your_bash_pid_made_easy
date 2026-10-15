@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# checking process status wihout using ps
+pgrep -l bash
