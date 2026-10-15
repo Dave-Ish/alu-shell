@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+PID_FILE="/var/run/my_process.pid"
+DAEMON_PATH="./manage_my_process"
+
+case "$1" in
+    start)
+        # Check if daemon file exists locally
+        if [ -f "$DAEMON_PATH" ]; then
+            # Run the daemon script in the background detached from the terminal
+            "$DAEMON_PATH" &
+            # $! captures the PID of the most recently executed background command
+            echo $! > "$PID_FILE"
+            echo "manage_my_process started"
+        fi
+        ;;
+    stop)
+        # Check if the process tracking PID file exists
+        if [ -f "$PID_FILE" ]; then
+            # Read the PID inside the file and terminate the process
+            kill "$(cat "$PID_FILE")" 2>/dev/null
+            rm -f "$PID_FILE"
+        fi
+        echo "manage_my_process stopped"
+        ;;
+    restart)
+        # Stop execution and remove the old PID file tracking
+        if [ -f "$PID_FILE" ]; then
+            kill "$(cat "$PID_FILE")" 2>/dev/null
+            rm -f "$PID_FILE"
+        fi
+        
+        # Start execution as a new process background layer
+        if [ -f "$DAEMON_PATH" ]; then
+            "$DAEMON_PATH" &
+            echo $! > "$PID_FILE"
+            echo "manage_my_process restarted"
+        fi
+        ;;
+    *)
+        # Default message if no matching arguments or invalid parameters are provided
+        echo "Usage: manage_my_process {start|stop|restart}"
+        exit 1
+        ;;
+esac
