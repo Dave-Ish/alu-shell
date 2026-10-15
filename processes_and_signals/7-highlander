@@ -1,0 +1,10 @@
+#!/bin/bash
+# Trap SIGTERM, print the phrase immediately, and ensure standard output flushes
+trap 'echo "I am invincible!!!"' SIGTERM
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2 &
+    wait $!
+done
