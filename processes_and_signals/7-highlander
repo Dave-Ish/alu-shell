@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Trap SIGTERM, print the phrase immediately, and ensure standard output flushes
 trap 'echo "I am invincible!!!"' SIGTERM
 
